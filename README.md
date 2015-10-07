@@ -1,12 +1,13 @@
 # pColor
 pColor - плагин jQuery для выбора цвета (color picker)
 
-
 [screenshot](http://pcolor.offnote.net/screenshot.png)
 
-Документация на сайте http://www.pcolor.offnote.net
 
-## License
+###Подробная документация на сайте 
+http://www.pcolor.offnote.net
+
+### License
 
 Copyright (c) 2015 Marat Belikov.
 
