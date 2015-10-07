@@ -1,7 +1,7 @@
 # pColor
 pColor - плагин jQuery для выбора цвета (color picker)
 
-utf-8
+charset="utf-8"
 
 [screenshot](http://pcolor.offnote.net/screenshot.png)
 
