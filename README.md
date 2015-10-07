@@ -5,7 +5,7 @@ pColor - плагин jQuery для выбора цвета (color picker)
 
 ## License
 
-Copyright (c) 2015 Olivier Giulieri.
+Copyright (c) 2015 Marat Belikov.
 
-evol.colorpicker is released under the [MIT license](https://github.com/offnote/pColor/blob/master/LICENSE.md).
+pColor is released under the [MIT license](https://github.com/offnote/pColor/blob/master/LICENSE.md).
 
