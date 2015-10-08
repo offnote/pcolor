@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>example</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="pcolor.min.js"></script>
+<link href="pcolor.min.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	width: 100%;
+	height: 100%;
+	background: #F5F5F5;
+}
+#header {
+	background: #0080C0;
+	text-align: center;
+	padding: 12px;
+}
+#content {
+	width: 980px;
+	margin: 0 auto;
+	background:#FFF;
+	border: 1px solid #E2E2E2;
+}
+table, table td {
+	border-collapse: collapse;
+	border-color: #CCCCCC;
+}
+table td { padding: 9px 12px; }
+pre { margin: 3px; }
+#onсhange {
+	margin: 5px;
+	padding: 12px;
+	border: dashed 1px #0000FF;
+}
+h4 { text-align: center; }
+</style>
+</head>
+<body>
+<div id="header">
+	<h1>pColor -  плагин jQuery для выбора цвета (color picker)</h1>
+</div>
+<div id="content">
+	<h4>Подробная демонстрация работы плагина на сайте
+		<a href="http://www.pcolor.offnote.net">
+			www.pcolor.offnote.net
+		</a>
+	</h4>
+	<table width="900" border="1" align="center">
+		<tr>
+			<td>Кодировка плагина </td>
+			<td>UTF-8</td>
+		</tr>
+		<tr>
+			<td>Работа pColor проверена в браузерах</td>
+			<td><ul>
+					<li>Internet Explorer 8</li>
+					<li>Opera 32.0</li>
+					<li>Google Chrome 44</li>
+					<li>Яндекс.Браузер 15</li>
+				</ul></td>
+		</tr>
+		<tr>
+			<td>Поддержка версий jQuery</td>
+			<td><ul>
+					<li>jquery-1.7...</li>
+					<li>jquery-1.8...</li>
+					<li>jquery-1.9...</li>
+					<li>jquery-2.0.0</li>
+				</ul></td>
+		</tr>
+		<tr>
+			<td width="319">Подключение плагина </td>
+			<td width="571"><p>....................</p>
+				<p>&lt;head&gt;</p>
+				<p>подключить библиотеку jQuery </p>
+				<p>&lt;script language=&quot;JavaScript&quot; type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</p>
+				<p>Подключить плагин pColor и стили CSS указав пути к ним </p>
+				<p>&lt;script language=&quot;JavaScript&quot; type=&quot;text/javascript&quot; src=&quot;.../pcolor.min.js&quot;&gt;&lt;/script&gt;<br />
+					&lt;link href=&quot;.../pcolor.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;<br />
+				</p>
+				<p>&lt;/head&gt;</p>
+				<p>.........................</p></td>
+		</tr>
+		<tr>
+			<td> $(&quot;#test-1&quot;).pColor({
+				<pre>
+  textMS : 'Цвета темы',  
+  textWEB : 'Веб-цвета', 
+  textCom : 'Стандартные цвета',
+  value : true, 
+  fill : true, 
+  color : '#ffc000'	 
+</pre>
+				}); </td>
+			<td><input id="test-1" name="Input" type="text" /></td>
+		</tr>
+		<tr>
+			<td> $(&quot;#test-2&quot;).pColor({
+				<pre>
+ fill : true   ,   
+ color : '#ffc000',	
+ selectorCss : true,
+  textMS : 'Цвета темы',  
+  textWEB : 'Веб-цвета', 
+  textCom : 'Стандартные цвета',
+
+ onChange:function(color,obj){
+  $("#onсhange").css('background',color);
+  $("#onсhange-value").val(color);
+}
+	 
+</pre>
+				}); </td>
+			<td><input id="onсhange-value" name="" type="text" />
+				<input id="test-2" name="Input" type="text" />
+				<div id="onсhange">
+					Callback-функция возвращает выбранный HEX-цвет
+				</div></td>
+		</tr>
+		<tr>
+			<td> $(&quot;.notid&quot;).pColor({
+				<pre>
+ fill : true   ,   
+ color : '#ffc000',	
+ selectorCss : true,
+  textMS : 'Цвета темы',  
+  textWEB : 'Веб-цвета', 
+  textCom : 'Стандартные цвета',
+  selectorCss : true
+	 
+</pre>
+				}); </td>
+			<td><p>Подключение по имени класса
+				</p>
+				<p>
+					<input class="notid" name="" type="button" />
+					<input class="notid" name="" type="button" />
+					<input class="notid" name="" type="button" />
+				</p></td>
+		</tr>
+	</table>
+	<h4>Options - Сводная таблица</h4>
+	<table  width="900" border="1" align="center" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<td><strong>Options</strong></td>
+				<td><strong>Свойства</strong></td>
+				<td><strong>По умолчанию</strong></td>
+			</tr>
+		</thead>
+		<tr>
+			<td><pre>value</pre></td>
+			<td>Устанавливает значение для селектора</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>fill</td>
+			<td>Заливка селектора</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>color</td>
+			<td>Устанавливает первоначальный цвет</td>
+			<td>&quot;&quot;</td>
+		</tr>
+		<tr>
+			<td>skin</td>
+			<td><p>Устанавливает тему оформления. Доступны: <strong>green</strong> , <strong>blue</strong> , <strong>orange</strong>
+				</p>
+				<p>Имя класса добавляется к основному классу <strong>.colorPicker-box</strong> Пример:( .colorPicker-box.green )</p></td>
+			<td>&quot;&quot;</td>
+		</tr>
+		<tr>
+			<td>selectorCss</td>
+			<td>Оформление селектора. Прикрепляет класс к селектору</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>selectorClass</td>
+			<td>Оформление селектора. Имя класса для селектора</td>
+			<td>pcolorSelector</td>
+		</tr>
+		<tr>
+			<td>textMS</td>
+			<td>Языковой пакет а так же для charset=windows-1251</td>
+			<td>Цвета темы</td>
+		</tr>
+		<tr>
+			<td>textWEB</td>
+			<td>Языковой пакет а так же для charset=windows-1251</td>
+			<td>Веб-цвета</td>
+		</tr>
+		<tr>
+			<td>textCom</td>
+			<td>Языковой пакет а так же для charset=windows-1251</td>
+			<td>Стандартные цвета</td>
+		</tr>
+		<tr>
+			<td>onChange</td>
+			<td>Callback-функция возвращает выбранный (HEX-цвет , Обект)</td>
+			<td>function() {}</td>
+		</tr>
+	</table>
+</div>
+<script language="JavaScript" type="text/javascript">
+  
+ /* Demo */ 
+  
+jQuery(function($) {
+	$("#test-1").pColor({
+		textMS : 'Цвета темы',          // Цвета темы
+		textWEB : 'Веб-цвета',          // Веб-цвета
+		textCom : 'Стандартные цвета' , // Стандартные цвета
+		value : true  ,                 // Вставить значение 
+		fill : true   ,                 // Заливка
+		color : '#ffc000',				// Установить цвет
+	});
+	
+	$("#test-2").pColor({
+		fill : true   ,                 // Заливка
+		color : '#ffc000',	            // Установить цвет
+		 selectorCss : true,			// Установить style
+		  textMS : 'Цвета темы',        // если страница - charset=windows-1251"
+		  textWEB : 'Веб-цвета', 		// если страница - charset=windows-1251"
+		  textCom : 'Стандартные цвета',// если страница - charset=windows-1251"
+
+		onChange:function(color,obj){
+			$("#onсhange").css('background',color);
+			$("#onсhange-value").val(color);
+		}
+	});
+	
+	$(".notid").pColor({
+		textMS : 'Цвета темы',          // Цвета темы
+		textWEB : 'Веб-цвета',          // Веб-цвета
+		textCom : 'Стандартные цвета' , // Стандартные цвета
+		selectorCss : true,			// Установить style
+		fill : true   ,                 // Заливка
+		color : '#ffc000',				// Установить цвет
+	});
+	
+	
+})
+  </script>
+<h4>Подробная демонстрация работы плагина на сайте
+	<a href="http://www.pcolor.offnote.net">
+		www.pcolor.offnote.net
+	</a>
+</h4>
+</body>
+</html>
