@@ -25,8 +25,8 @@
     ],
     "bugs": "",
     "demo": "http://pcolor.offnote.net/example.php",
-    "download": "https://github.com/offnote/pColor,
+    "download": "https://github.com/offnote/pColor",
     "dependencies": {
-        "jquery": ">=2.0"
+        "jquery": "v1.7 - v2.0"
     }
 }
