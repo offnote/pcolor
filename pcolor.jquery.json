@@ -27,6 +27,6 @@
     "demo": "http://pcolor.offnote.net/example.php",
     "download": "https://github.com/offnote/pColor,
     "dependencies": {
-        "jquery": ">=1.7"
+        "jquery": ">=2.0"
     }
 }
