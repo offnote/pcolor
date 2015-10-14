@@ -1,0 +1,32 @@
+{
+    "name": "pColor",
+    "title": "pColor-Color-Picker",
+    "description": "Color-Picker-jQuery-plugins",
+    "keywords": [
+        "color",
+        "picker"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Marat Belikov"
+    },
+    "maintainers": [
+        {
+            "name": "Marat Belikov"",
+            "email": "offnote@mail.com",
+            "url": "http://pcolor.offnote.net/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/offnote/pcolor/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "",
+    "demo": "http://pcolor.offnote.net/example.php",
+    "download": "https://github.com/offnote/pColor,
+    "dependencies": {
+        "jquery": "1.7-2.0"
+    }
+}
