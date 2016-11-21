@@ -1,6 +1,7 @@
 /*********************************************************
  * Licensed under the MIT licenses.
  * Copyright 2015 (c) M.Belikov www.pcolor.offnote.net
+ * update 2016
 *********************************************************/
 
 (function( $ ){
@@ -33,6 +34,7 @@
 
     var set = $.extend({
 		onChange: function() {},
+		onSelect: function() {},
 		fill : false,
 		color : '',
 		skin : '',
@@ -93,7 +95,6 @@
 		Если у селектора нет атрибута ID то атрибут ID будет присвоен ему автоматически 
 *********************************************************************************/	
 		if(!objID){
-			
 			objID = 'pcolornotID-'+notID;
 			$this.attr('id', objID);
 		}
@@ -158,6 +159,8 @@
 				 
 				$("#colorPreview-"+objID).css('background', c );
 				
+				if (typeof set.onSelect == 'function')	set.onSelect.call(this,c,$this);
+				
 				i.addClass('colorPicker-hover');
 				} ,
 			 function() { $(this).removeClass('colorPicker-hover')}
@@ -185,9 +188,8 @@
 			
 			$("div.colorPicker-box").hide();
 			
-			var position = $this.position();
-			var Top = position.top;
-			var Left = position.left;
+			var Top = $this.offset().top;
+			var Left = $this.offset().left;
 			var objHeigh = $this.height();
 			var objWidth = $this.width();
 			var WinWidth =  $(window).width();
@@ -199,10 +201,10 @@
 			var emptyRight = WinWidth - (Left + objWidth);
 			var emptyBottom = (WinHeigh+ topScroll) - (Top + objHeigh);
 			
-			Top = Top + objHeigh ;
+			//Top = Top + objHeigh ;
 			
 			if( colorboxWidth > emptyRight ) Left =  Left  + objWidth - colorboxWidth ;
-			if( colorboxHeigh > emptyBottom ) Top =  Top  - objHeigh - colorboxHeigh ;
+			if( colorboxHeigh > emptyBottom ) Top =  Top  /*- objHeigh*/ - colorboxHeigh ;
 
 			$('#colorTab-MS-'+objID+' > div , #colorTab-WEB-'+objID+' > div')
 			.removeClass('colorPicker-select')
